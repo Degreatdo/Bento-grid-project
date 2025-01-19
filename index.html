@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor's project | Bento grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      background-color: hsl(0, 0%, 96%);
+      font-family: "DM Sans", serif;
+      font-optical-sizing: auto;
+      line-height: 14px;
+      font-size: 16px;
+      font-weight: 680;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      letter-spacing: -1.2px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-container {
+      height: 400px;
+      width: 50%;
+      display: grid;
+      grid-template-columns: 120px 120px 120px 120px;
+      grid-template-rows: 160px 40px 70px 130px;
+      gap: 13px;
+      text-align: center;
+    }
+    
+    .box {
+      border-radius: 5px;
+    }
+
+    .one {
+      background-color: hsl(31, 66%, 93%);
+      grid-row: span 2;
+      order: 1;
+      padding: 50px 20px 20px 20px;
+      text-align: left;
+    }
+    .one em {
+      color: hsl(256, 67%, 59%);
+    }
+    .one > img {
+      margin-top: 18px;
+      margin-right: 10px;
+    }
+    
+    .two {
+     background-color: hsl(256, 67%, 59%);
+     grid-column: span 2;
+     order: 2;
+     color: hsl(0, 0%, 97%);
+     padding: 30px 10px 10px 10px;
+    }
+    .two strong {
+      color: hsl(39, 100%, 71%);
+    }
+    #larger {
+      font-size: 28px;
+      line-height: 25px;
+      margin: 0;
+    }
+    #smaller {
+      font-size: 10px;
+      font-weight: 200;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+    }
+    .two img {
+      margin-top: 15px;
+    }
+
+    .three {
+      background-color: hsl(254, 88%, 90%);
+      grid-row: span 3;
+      order: 3;
+      padding: 15px 17px 17px 6px;
+      text-align: left;
+      overflow: hidden;
+    }
+    #large {
+      font-size: 14px;
+    }
+    #small {
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 11px;
+      letter-spacing: -1px;
+    }
+
+    .four {
+      background-color: hsl(0, 0%, 100%);
+      grid-row: span 2;
+      order: 4;
+      padding: 10px 10px 10px 10px;
+      text-align: left;
+      overflow: hidden;
+    }
+    .four > img {
+      margin-bottom: 8px;
+    }
+
+    .five {
+      background-color: hsl(39, 100%, 71%);
+      grid-row: span 2;
+      order: 5;
+      padding: 10px 10px 0px 10px;
+      text-align: left;
+      overflow: hidden;
+    }
+    .five > img {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .six {
+      background-color: hsl(39, 100%, 71%);
+      grid-row: span 2;
+      order: 6;
+      padding: 20px 10px 10px 10px;
+      text-align: left;
+      font-size: 18px;
+    }
+    .six > img {
+      margin-top: 30px;
+    }
+
+    .seven {
+      background-color: hsl(0, 0%, 100%);
+      order: 7;
+      padding: 10px 10px 10px 10px;
+      text-align: left;
+      line-height: 20px;
+    }
+    .seven > p {
+      font-size: 10px;
+      font-weight: 400;
+    }
+    .seven strong {
+      font-size: 28px;
+    }
+    .seven img {
+      margin-top: 5px;
+    }
+
+    .eight {
+      background-color: hsl(256, 67%, 59%);
+      grid-column: span 2;
+      order: 8;
+      padding: 20px 10px 10px 10px;
+      text-align: left;
+      color: hsl(0, 0%, 97%);
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .eight img {
+      float: left;
+      margin: 5px 5px 5px 5px;
+    }
+
+    footer {
+      margin-top: 70px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (max-width: 375px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        width: 100%;
+        margin-top: 2em;
+      }
+
+      .grid-container {
+        display: flex;
+        flex-direction: column;
+        height: 95%;
+        width: 200px;
+        letter-spacing: -0.3px;
+      }
+
+      footer {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+
+      .box {
+        overflow: visible;
+      }
+
+      .one {
+        order: 7;
+        font-size: 16px;
+        padding: 25px 20px 20px 20px;
+      }
+      .one img {
+        width: 65%;
+        height: auto;
+        padding: 0px 0px 0px 0px;
+        margin-top: 15px;
+      }
+
+      .two {
+        order: 1;
+        padding: 25px 15px 15px 15px;
+      }
+      .two > img {
+        width: 64%;
+        height: auto;
+      }
+
+      .three {
+        order: 4;
+        text-align: center;
+        padding: 15px 15px 15px 15px;
+      }
+      #large {
+        font-size: 14px;
+      }
+      #small {
+        font-size: 13px;
+      }
+      .three img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .four {
+        order: 2;
+        font-size: 14px;
+      }
+      .four img {
+        width: 100%;
+        height: auto;
+      }
+
+      .five {
+        order: 3;
+        padding-right: 30px;
+        overflow: hidden;
+        letter-spacing: -1.2px;
+      }
+      .five img {
+        width: 120px;
+        height: auto;
+        display: block;
+        transform: translateY(12%);
+        margin-top: 0;
+      }
+
+      .six {
+        order: 8;
+        padding: 20px 20px 20px 15px;
+        font-size: 18px;
+        letter-spacing: -1.4px;
+      }
+      .six img {
+        display: block;
+        width: 130px;
+        height: auto;
+        margin-top: 15px;
+      }
+
+      .seven {
+        order: 6;
+        word-spacing: 1px;
+      }
+      .seven p {
+        font-size: 11px;
+      }
+      .seven img {
+        max-width: 57%;
+        height: auto;
+        margin-top: 0;
+      }
+
+      .eight {
+        order: 5;
+        text-align: center;
+        padding: 15px 10px 0px 10px;
+        font-size: 21px;
+        line-height: 18px;
+      }
+      .eight img {
+        float: none;
+        padding-bottom: 0;
+        width: 160px;
+        height: auto;
+        margin: 5px 15px 5px 15px;
+      }
+
+
+    }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box two">
+      <p id="larger">Social Media <strong>10x</strong> <em>Faster</em> with AI</p>
+      <img src="./assets/images/illustration-five-stars.webp" height="15px" alt="Five stars icon" />
+      <p id="smaller">Over 4,000 5-star reviews</p>
+    </div>
+
+    <div class="box four">
+      <img src="./assets/images/illustration-multiple-platforms.webp" height="32px" alt="Multiple platforms icon" />
+      Manage multiple accounts and platforms.
+    </div>
+
+    <div class="box five">
+      Maintain a consistent posting schedule.
+      <img src="./assets/images/illustration-consistent-schedule.webp" height="75px" alt="Consistent schedule icon" />
+    </div>
+
+    <div class="box three">
+      <p id="large">Schedule to social media.</p>
+      <img src="./assets/images/illustration-schedule-posts.webp" height="160px" alt="Schedule posts icon" />
+      <p id="small">Optimize post timings to publish content at the perfect time for your audience.</p>
+    </div>
+
+    <div class="box eight">
+      <img src="./assets/images/illustration-grow-followers.webp" height="90px" alt="Grow followers icon" />
+      <p>Grow followers with non-stop content.</p>
+    </div>
+
+    <div class="box seven">
+      <p><strong>>56%</strong><br /> faster audience growth</p>
+      <img src="./assets/images/illustration-audience-growth.webp" height="30px" alt="Audience growth icon" />
+    </div>
+
+    <div class="box one">
+      Create and schedule content <em>quicker.</em>
+      <img src="./assets/images/illustration-create-post.webp" height="45px" alt="Create post icon" />
+    </div>
+
+    <div class="box six">
+      Write your content using AI.
+      <img src="./assets/images/illustration-ai-content.webp" height="105px" alt="Illustration ai content icon" />
+    </div>
+  </div>
+  <footer>
+      &copy;&nbsp; 2025<br />
+      Bento Grid project<br/>
+  </footer>
+</body>
+
+</html>
